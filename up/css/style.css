@@ -9,7 +9,7 @@
 
 html {
   --color-primary: #ffb4a2;
-  --color-primary-m: #3c096c;
+  --color-primary-m: #fefae0;
   --color-secondary: #7f5539;
   --color-secondary-m: #4cc9f0;
   --color-tertiary: #ffb4a2;
@@ -264,8 +264,32 @@ i {
   }
 }
 
-.tenders {
+.lenders {
   grid-column: container-start / container-end;
+  background-color: var(--color-primary-m);
+}
+
+.lenders__title {
+  text-align: center;
+  font-size: calc(1.2rem + 0.5vw);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  letter-spacing: 0.4rem;
+}
+
+.lenders__logo {
+  margin-top: 3rem;
+  padding: 1rem 10rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-gap: 6rem;
+  place-items: center;
+}
+
+.lenders__logo img {
+  width: calc(7rem + 5vw);
+  margin-right: 5rem;
 }
 
 .showcase {
