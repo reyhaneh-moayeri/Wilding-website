@@ -17,7 +17,7 @@ html {
   --color-quaternary: #f19c79;
   --color-quaternary-m: #e5989b;
   --color-quinary: white;
-  --color-quinary-m: rgb(255, 255, 255, 0.5);
+  --color-quinary-m: rgb(256, 256, 256, 0.9);
 }
 
 :root {
@@ -56,6 +56,17 @@ a {
 i {
   font-size: calc(1.2rem + 0.5vw);
   cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 2rem 6rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  font-size: calc(1rem + 0.5vw);
+  letter-spacing: 0.3rem;
+  transition: 0.5s ease-in-out;
 }
 
 .header {
@@ -193,6 +204,11 @@ i {
   }
 }
 
+.sticky {
+  position: fixed;
+  background-color: var(--color-quinary-m);
+}
+
 .showcase {
   grid-column: container-start / container-end;
   background-image: url("../images/p1.jpg");
@@ -211,6 +227,10 @@ i {
   font-size: calc(2.5rem + 5vw);
   color: var(--color-secondary);
   text-align: center;
+}
+
+.hero__showcase {
+  display: flex;
 }
 
 .hero__showcase--content {
@@ -249,6 +269,55 @@ i {
   color: var(--color-quinary);
 }
 
+.hero__showcase--content__btn button {
+  border: none;
+  padding: 2rem 6rem;
+  margin: 2rem 4rem;
+  color: var(--color-quinary);
+  background-color: var(--color-secondary);
+  font-size: calc(1rem + 0.5vw);
+  letter-spacing: 0.3rem;
+}
+
+.hero__showcase--detail {
+  align-self: center;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.hero__showcase--detail__circle {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-quinary);
+  font-size: calc(1.5rem + 2vw);
+  position: relative;
+}
+
+.hero__showcase--detail__circle::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 150%;
+  background-color: #000;
+  right: -160%;
+}
+
+.hero__showcase--detail__content {
+  font-size: calc(1rem + 0.5vw);
+  width: 30rem;
+  position: absolute;
+  right: 0;
+}
+
+.hero__showcase--detail__content p:first-of-type {
+  font-weight: 400;
+}
+
 @media screen and (max-width: 800px) {
   .hero {
     margin-top: 50px;
@@ -258,6 +327,9 @@ i {
     text-align: left;
     margin-left: 2rem;
     padding: 0 2rem;
+  }
+  .hero__showcase {
+    flex-direction: column;
   }
   .hero__showcase--content {
     width: 30rem;
@@ -279,17 +351,17 @@ i {
 }
 
 .lenders__logo {
-  margin-top: 3rem;
+  margin: 3rem 0;
   padding: 1rem 10rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   grid-gap: 6rem;
   place-items: center;
+  place-content: center;
 }
 
 .lenders__logo img {
   width: calc(7rem + 5vw);
-  margin-right: 5rem;
 }
 
 .showcase {

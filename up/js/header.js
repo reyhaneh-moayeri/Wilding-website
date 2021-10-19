@@ -20,3 +20,20 @@ document.addEventListener("keydown", (e) => {
 });
 
 overlay.addEventListener("click", closeMenu);
+
+const navHeight = nav.getBoundingClientRect().height;
+const stickyNav = (entries) => {
+  entries.forEach((entry) => {
+    // console.log(entry);
+    if (!entry.isIntersecting) nav.classList.add("sticky");
+    else nav.classList.remove("sticky");
+  });
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `${navHeight}px`,
+});
+
+headerObserver.observe(header);
