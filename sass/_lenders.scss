@@ -11,22 +11,19 @@
     letter-spacing: 0.4rem;
   }
   &__logo {
-    margin-top: 3rem;
+    margin: 3rem 0;
     padding: 1rem 10rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     grid-gap: 6rem;
     place-items: center;
+    place-content: center;
 
     & img {
       width: calc(7rem + 5vw);
-      margin-right: 5rem;
     }
   }
 
-  // @include media-tablet {
-  //   &__logo {
-  //     flex-direction: column;
-  //   }
-  // }
+  @include media-tablet {
+  }
 }

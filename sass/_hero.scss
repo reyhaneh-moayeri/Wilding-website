@@ -25,6 +25,7 @@
   }
 
   &__showcase {
+    display: flex;
     &--content {
       width: 45rem;
       display: flex;
@@ -57,6 +58,59 @@
           color: var(--color-quinary);
         }
       }
+
+      &__btn {
+        button {
+          border: none;
+          padding: 2rem 6rem;
+          margin: 2rem 4rem;
+          color: var(--color-quinary);
+          background-color: var(--color-secondary);
+          font-size: font-size(font-size-small);
+          letter-spacing: 0.3rem;
+        }
+      }
+    }
+
+    &--detail {
+      align-self: center;
+      margin: auto;
+      // display: flex;
+      flex-wrap: wrap;
+
+      &__circle {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        background-color: var(--color-secondary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-quinary);
+        font-size: font-size(font-size-medium);
+        position: relative;
+      }
+
+      &__circle::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 150%;
+        background-color: #000;
+        right: -160%;
+      }
+
+      &__content {
+        font-size: font-size(font-size-small);
+        width: 30rem;
+        // position: relative;
+        // left: 5rem;
+        position: absolute;
+        right: 0;
+        & p:first-of-type {
+          font-weight: font-weight(font-weight-regular);
+        }
+      }
     }
   }
 
@@ -70,9 +124,22 @@
     }
 
     &__showcase {
+      flex-direction: column;
       &--content {
         width: 30rem;
       }
+
+      // &--detail {
+      //   justify-content: flex-start;
+      //   margin: 0 !important;
+      //   align-self: stretch !important;
+      //   position: relative;
+      //   display: flex;
+
+      //   &__circle::after {
+      //     display: none;
+      //   }
+      // }
     }
   }
 }

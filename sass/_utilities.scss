@@ -6,7 +6,7 @@
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1.9;
-  background: var(--color-primary);
+  background-color: var(--color-quinary);
 }
 
 .container {
@@ -19,7 +19,6 @@ body {
     [center-end] 1fr [container-end];
 
   grid-template-rows: 140vh repeat(9, min-content);
-
   @include media-tablet {
     grid-template-rows: 100vh repeat(9, min-content);
   }
@@ -44,10 +43,11 @@ i {
 button {
   cursor: pointer;
   border: none;
-  padding: 2rem 6rem;
+  padding: 1.8rem 4rem;
   text-transform: uppercase;
   margin-top: 2rem;
   font-size: font-size(font-size-small);
+  // color: var(--color-quinary);
   letter-spacing: 0.3rem;
   transition: 0.5s ease-in-out;
 }

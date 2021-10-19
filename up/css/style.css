@@ -9,10 +9,10 @@
 
 html {
   --color-primary: #ffb4a2;
-  --color-primary-m: #fefae0;
-  --color-secondary: #7f5539;
-  --color-secondary-m: #4cc9f0;
-  --color-tertiary: #ffb4a2;
+  --color-primary-m: #ffeee4;
+  --color-secondary: #453232;
+  --color-secondary-m: #797979;
+  --color-tertiary: #215865;
   --color-tertiary-m: rgb(38, 52, 65, 0.65);
   --color-quaternary: #f19c79;
   --color-quaternary-m: #e5989b;
@@ -27,7 +27,7 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1.9;
-  background: var(--color-primary);
+  background-color: var(--color-quinary);
 }
 
 .container {
@@ -61,7 +61,7 @@ i {
 button {
   cursor: pointer;
   border: none;
-  padding: 2rem 6rem;
+  padding: 1.8rem 4rem;
   text-transform: uppercase;
   margin-top: 2rem;
   font-size: calc(1rem + 0.5vw);
@@ -379,16 +379,6 @@ button {
   grid-row: 1/3;
 }
 
-.about-us__content--title {
-  font-size: calc(1.5rem + 5vw);
-  font-weight: 400;
-}
-
-.about-us__content--para {
-  font-size: calc(1.2rem + 0.5vw);
-  font-weight: 400;
-}
-
 .about-us__content--btn {
   background-color: var(--color-secondary);
 }
@@ -399,8 +389,6 @@ button {
 }
 
 .about-us__pro1--para {
-  font-size: calc(1.2rem + 0.5vw);
-  font-weight: 400;
   margin-top: 2rem;
 }
 
@@ -444,9 +432,138 @@ button {
   }
 }
 
+.products {
+  grid-column: container-start / container-end;
+  text-align: center;
+}
+
+.products__cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+}
+
+.products__cards--content {
+  text-align: left;
+  padding: 1rem 2rem;
+}
+
+.products__cards--content__title {
+  font-size: calc(1.5rem + 2vw);
+}
+
+.products__cards--content__details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products__cards--content__details--detail p:first-of-type {
+  font-size: calc(1.5rem + 2vw);
+  color: var(--color-tertiary);
+  position: relative;
+}
+
+.products__cards--content__details--detail p:first-of-type::after {
+  position: absolute;
+  content: "";
+  width: 60%;
+  height: 0.3rem;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-secondary);
+}
+
+.products__cards--content__details--detail p:last-of-type {
+  margin-top: 1rem;
+}
+
+.products__cards--content__btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.products__cards--content__btns button:first-of-type {
+  background-color: var(--color-secondary);
+  color: var(--color-quinary);
+}
+
+.products__cards--content__btns button:last-of-type {
+  background-color: var(--color-quinary);
+  color: var(--color-secondary);
+  border: 0.2rem solid var(--color-secondary);
+}
+
+.products__cards--card {
+  width: 40%;
+}
+
+.products__cards--card img {
+  width: 100%;
+  height: 50rem;
+  object-fit: cover;
+}
+
+.products__results {
+  padding: 4rem 2rem;
+  background-color: var(--color-primary-m);
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.products__results--result:first-of-type, .products__results--result:nth-of-type(2) {
+  border-right: 0.2rem solid var(--color-secondary);
+}
+
+.products__results--result {
+  width: 33%;
+  padding: 3rem 5rem;
+}
+
+.products__results--result p:first-of-type {
+  color: var(--color-secondary);
+  font-size: calc(1.5rem + 2vw);
+}
+
+@media screen and (max-width: 800px) {
+  .products__cards {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+  }
+  .products__cards--card {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .products__results {
+    flex-direction: column;
+    align-items: center;
+  }
+  .products__results--result {
+    border-right: 0 !important;
+    border-bottom: 0.2rem solid var(--color-secondary);
+    width: 70%;
+  }
+}
+
 .showcase {
   background-repeat: none;
   background-position: center;
   background-size: cover;
+}
+
+.about-us__content--title, .products__title {
+  font-size: calc(1.5rem + 5vw);
+  font-weight: 400;
+}
+
+.about-us__content--para, .about-us__pro1--para, .products__description, .products__cards--content__para, .products__cards--content__details--detail p:last-of-type, .products__results--result p:last-of-type {
+  font-size: calc(1rem + 0.5vw);
+  font-weight: 400;
+  color: var(--color-secondary-m);
 }
 /*# sourceMappingURL=style.css.map */
