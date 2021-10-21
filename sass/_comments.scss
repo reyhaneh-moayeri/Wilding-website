@@ -2,6 +2,8 @@
   grid-column: container-start / container-end;
   text-align: center;
   padding-bottom: 10rem;
+  position: relative;
+
   &__header {
     width: 100%;
     margin: auto;
@@ -16,11 +18,17 @@
   &__slider {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
+    position: relative;
+    width: 80%;
+    margin: auto;
+    height: 50rem;
 
     &--slide {
       text-align: left;
+      position: absolute;
+      top: 3rem;
       width: 32rem;
       margin-right: 2.5rem;
       padding: 5rem 3rem;
@@ -29,6 +37,12 @@
 
       &__active .comments__slider--slide__para {
         color: black;
+      }
+
+      &__active {
+        transform: scale(1.05) !important;
+        background-color: var(--color-primary);
+        z-index: 2;
       }
 
       &__stars {
