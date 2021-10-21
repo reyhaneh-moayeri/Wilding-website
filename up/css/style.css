@@ -34,6 +34,7 @@ body {
   font-family: "gilroy";
   line-height: 1.9;
   background-color: var(--color-quinary);
+  overflow-x: hidden;
 }
 
 .container {
@@ -73,6 +74,12 @@ button {
   font-size: calc(1rem + 0.5vw);
   letter-spacing: 0.3rem;
   transition: 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+  button {
+    padding: 1rem 2rem;
+  }
 }
 
 .header {
@@ -279,7 +286,6 @@ button {
 
 .hero__showcase--content__btn button {
   border: none;
-  padding: 2rem 6rem;
   margin: 2rem 4rem;
   color: var(--color-quinary);
   background-color: var(--color-secondary);
@@ -618,6 +624,7 @@ button {
   grid-column: container-start / container-end;
   text-align: center;
   padding-bottom: 10rem;
+  position: relative;
 }
 
 .comments__header {
@@ -632,12 +639,17 @@ button {
 .comments__slider {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
+  position: relative;
+  width: 80%;
+  margin: auto;
+  height: 50rem;
 }
 
 .comments__slider--slide {
   text-align: left;
+  position: absolute;
+  top: 3rem;
   width: 32rem;
   margin-right: 2.5rem;
   padding: 5rem 3rem;
@@ -647,6 +659,12 @@ button {
 
 .comments__slider--slide__active .comments__slider--slide__para {
   color: black;
+}
+
+.comments__slider--slide__active {
+  transform: scale(1.05) !important;
+  background-color: var(--color-primary);
+  z-index: 2;
 }
 
 .comments__slider--slide__stars {
@@ -786,6 +804,20 @@ button {
   text-align: center;
   color: var(--color-secondary-m);
   font-size: calc(1rem + 0.5vw);
+}
+
+@media screen and (max-width: 800px) {
+  .footer__col {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__col div {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .footer__description--socials {
+    justify-content: center;
+  }
 }
 
 .showcase, .comments__slider--slide__profile--pic:nth-child(1), .comments__slider--slide__profile--pic:nth-child(2), .comments__slider--slide__profile--pic:nth-child(3) {
