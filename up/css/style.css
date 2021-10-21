@@ -20,12 +20,18 @@ html {
   --color-quinary-m: rgb(256, 256, 256, 0.9);
 }
 
+@font-face {
+  font-family: "gilroy";
+  src: url(../fonts/Gilroy-Regular.ttf), url(../fonts/Gilroy-Black.ttf);
+  font-style: normal;
+}
+
 :root {
   font-size: 62.5%;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "gilroy";
   line-height: 1.9;
   background-color: var(--color-quinary);
 }
@@ -182,6 +188,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--color-primary);
   }
   .header__menu--line, .header__menu--line::before, .header__menu--line::after {
     content: "";
@@ -207,6 +214,7 @@ button {
 .sticky {
   position: fixed;
   background-color: var(--color-quinary-m);
+  z-index: 10;
 }
 
 .showcase {
@@ -381,6 +389,7 @@ button {
 
 .about-us__content--btn {
   background-color: var(--color-secondary);
+  color: var(--color-quinary);
 }
 
 .about-us__pro1 {
@@ -550,7 +559,236 @@ button {
   }
 }
 
-.showcase {
+.introduction {
+  display: flex;
+  grid-column: container-start / container-end;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10rem 0;
+  margin: 4rem 0;
+}
+
+.introduction__pic {
+  width: 40%;
+  height: 60rem;
+  background-color: var(--color-primary);
+  position: relative;
+}
+
+.introduction__pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+}
+
+.introduction__content {
+  width: 30%;
+}
+
+.introduction__content--title {
+  font-size: calc(1.5rem + 2vw);
+}
+
+.introduction__content--para {
+  margin-top: 3rem;
+}
+
+.introduction__content button {
+  background-color: var(--color-secondary);
+  color: var(--color-quinary);
+  margin-top: 8rem;
+}
+
+@media screen and (max-width: 800px) {
+  .introduction {
+    flex-direction: column;
+  }
+  .introduction__content, .introduction__pic {
+    width: 80%;
+  }
+  .introduction__content {
+    margin-top: 5rem;
+  }
+}
+
+.comments {
+  grid-column: container-start / container-end;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+
+.comments__header {
+  width: 100%;
+  margin: auto;
+}
+
+.comments__header--title {
+  font-size: calc(1.5rem + 2vw);
+}
+
+.comments__slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.comments__slider--slide {
+  text-align: left;
+  width: 32rem;
+  margin-right: 2.5rem;
+  padding: 5rem 3rem;
+  background: var(--color-quinary);
+  box-shadow: 3px 3px 15px rgba(114, 113, 113, 0.2);
+}
+
+.comments__slider--slide__active .comments__slider--slide__para {
+  color: black;
+}
+
+.comments__slider--slide__stars {
+  text-align: left;
+}
+
+.comments__slider--slide__stars i {
+  color: yellow;
+}
+
+.comments__slider--slide__para {
+  margin-top: 1.5rem;
+}
+
+.comments__slider--slide__profile {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.comments__slider--slide__profile--pic {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  margin-right: 2.5rem;
+}
+
+.comments__slider--slide__profile--role {
+  margin-right: 2rem;
+}
+
+.comments__slider--slide__profile--role__name {
+  font-size: calc(1.2rem + 0.5vw);
+  font-weight: 700;
+}
+
+.comments__slider--slide__profile--role__des {
+  font-size: 1.5rem;
+  color: var(--color-secondary-m);
+}
+
+.comments__slider--arrows {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comments__slider--arrows__right, .comments__slider--arrows__left {
+  display: flex;
+  margin-right: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.comments__slider--arrows__right i, .comments__slider--arrows__left i {
+  color: var(--color-quinary);
+}
+
+@media screen and (max-width: 800px) {
+  .comments {
+    padding-bottom: 5rem;
+  }
+  .comments__slider {
+    flex-direction: column;
+  }
+}
+
+.comments__slider--slide__profile--pic:nth-child(1) {
+  background-image: url("../images/profile-1.jpg");
+}
+
+.comments__slider--slide__profile--pic:nth-child(2) {
+  background-image: url("../images/profile-2.jpg");
+}
+
+.comments__slider--slide__profile--pic:nth-child(3) {
+  background-image: url("../images/profile-3.jpg");
+}
+
+.footer {
+  grid-column: container-start / container-end;
+  padding: 20rem 0 5rem 0;
+}
+
+.footer__col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.footer__description {
+  width: calc(25rem + 8vw);
+  padding: 0 2rem;
+}
+
+.footer__description--name {
+  font-size: calc(1.5rem + 2vw);
+  font-weight: 700;
+}
+
+.footer__description--para {
+  margin-top: 1rem;
+}
+
+.footer__description--socials {
+  margin-top: 4rem;
+  display: flex;
+}
+
+.footer__description--socials i {
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.footer__category--name, .footer__aboutus--name, .footer__menu--name {
+  font-size: calc(1.5rem + 2vw);
+}
+
+.footer__category--links a, .footer__aboutus--links a, .footer__menu--links a {
+  color: var(--color-secondary-m) !important;
+}
+
+.footer hr {
+  width: 90%;
+  margin: 5rem auto;
+  opacity: 0.4;
+}
+
+.footer__copyright {
+  text-align: center;
+  color: var(--color-secondary-m);
+  font-size: calc(1rem + 0.5vw);
+}
+
+.showcase, .comments__slider--slide__profile--pic:nth-child(1), .comments__slider--slide__profile--pic:nth-child(2), .comments__slider--slide__profile--pic:nth-child(3) {
   background-repeat: none;
   background-position: center;
   background-size: cover;
@@ -561,7 +799,7 @@ button {
   font-weight: 400;
 }
 
-.about-us__content--para, .about-us__pro1--para, .products__description, .products__cards--content__para, .products__cards--content__details--detail p:last-of-type, .products__results--result p:last-of-type {
+.about-us__content--para, .about-us__pro1--para, .products__description, .products__cards--content__para, .products__cards--content__details--detail p:last-of-type, .products__results--result p:last-of-type, .introduction__content--para, .comments__header--para, .comments__slider--slide__para, .footer__description--para {
   font-size: calc(1rem + 0.5vw);
   font-weight: 400;
   color: var(--color-secondary-m);

@@ -1,0 +1,105 @@
+.comments {
+  grid-column: container-start / container-end;
+  text-align: center;
+  padding-bottom: 10rem;
+  &__header {
+    width: 100%;
+    margin: auto;
+    &--title {
+      font-size: font-size(font-size-medium);
+    }
+    &--para {
+      @extend %para;
+    }
+  }
+
+  &__slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    &--slide {
+      text-align: left;
+      width: 32rem;
+      margin-right: 2.5rem;
+      padding: 5rem 3rem;
+      background: var(--color-quinary);
+      box-shadow: 3px 3px 15px rgba(114, 113, 113, 0.2);
+
+      &__active .comments__slider--slide__para {
+        color: black;
+      }
+
+      &__stars {
+        text-align: left;
+        & i {
+          color: yellow;
+        }
+      }
+      &__para {
+        @extend %para;
+        margin-top: 1.5rem;
+      }
+
+      &__profile {
+        display: flex;
+        margin-top: 2rem;
+        align-items: center;
+        &--pic {
+          width: 5rem;
+          height: 5rem;
+          background-color: var(--color-primary);
+          border-radius: 50%;
+          margin-right: 2.5rem;
+        }
+
+        &--role {
+          margin-right: 2rem;
+          &__name {
+            font-size: font-size(font-size-regular);
+            font-weight: font-weight(font-weight-bold);
+          }
+          &__des {
+            font-size: 1.5rem;
+            color: var(--color-secondary-m);
+          }
+        }
+      }
+    }
+  }
+
+  &__slider--arrows {
+    display: flex;
+    justify-content: flex-end;
+    &__right,
+    &__left {
+      display: flex;
+      margin-right: 1rem;
+      justify-content: center;
+      align-items: center;
+      width: 5rem;
+      height: 5rem;
+      background-color: black;
+      border-radius: 50%;
+
+      & i {
+        color: var(--color-quinary);
+      }
+    }
+  }
+
+  @include media-tablet {
+    padding-bottom: 5rem;
+    &__slider {
+      flex-direction: column;
+    }
+  }
+}
+
+@for $img from 1 through 3 {
+  .comments__slider--slide__profile--pic:nth-child(#{$img}) {
+    background-image: url("../images/profile-#{$img}.jpg");
+    @extend %bg;
+  }
+}

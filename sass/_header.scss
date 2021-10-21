@@ -113,6 +113,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: var(--color-primary);
 
       &--line,
       &--line::before,
@@ -149,4 +150,5 @@
 .sticky {
   position: fixed;
   background-color: var(--color-quinary-m);
+  z-index: 10;
 }

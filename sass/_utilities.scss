@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap");
 
+@font-face {
+  font-family: "gilroy";
+  src: url(../fonts/Gilroy-Regular.ttf), url(../fonts/Gilroy-Black.ttf);
+  font-style: normal;
+}
 :root {
   font-size: 62.5%;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "gilroy";
   line-height: 1.9;
   background-color: var(--color-quinary);
 }
