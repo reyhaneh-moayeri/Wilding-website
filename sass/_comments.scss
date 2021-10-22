@@ -1,8 +1,9 @@
 .comments {
   grid-column: container-start / container-end;
   text-align: center;
-  padding-bottom: 10rem;
+  padding: 10rem 1rem;
   position: relative;
+  background-color: var(--color-primary-m);
 
   &__header {
     width: 100%;
@@ -103,12 +104,28 @@
     }
   }
 
-  @include media-tablet {
+  @include media-desktop {
     padding-bottom: 5rem;
     &__slider {
-      flex-direction: column;
+      width: 100%;
+      overflow: hidden;
+
+      &--slide {
+        margin: auto;
+      }
     }
   }
+  // @include media-tablet {
+  //   padding-bottom: 5rem;
+  //   &__slider {
+  //     width: 100%;
+  //     overflow: hidden;
+
+  //     &--slide {
+  //       margin: auto;
+  //     }
+  //   }
+  // }
 }
 
 @for $img from 1 through 3 {
