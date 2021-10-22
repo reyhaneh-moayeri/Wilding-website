@@ -1,7 +1,7 @@
 .footer {
   //   background-color: red;
   grid-column: container-start / container-end;
-  padding: 20rem 0 5rem 0;
+  padding: 10rem 0 5rem 0;
 
   &__col {
     display: flex;
@@ -11,7 +11,6 @@
   &__description {
     width: calc(25rem + 8vw);
     padding: 0 2rem;
-    // background-color: orange;
     &--name {
       font-size: font-size(font-size-medium);
       font-weight: font-weight(font-weight-bold);

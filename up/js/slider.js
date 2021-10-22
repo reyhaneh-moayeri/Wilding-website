@@ -8,25 +8,10 @@ let currentSlide = 0;
 let maxSlide = slides.length;
 slides.forEach((s, i) => {
   s.style.transform = `translateX(${100 * i}%)`;
+  s.style.transition = 2;
 });
 
 arrowRight.addEventListener("click", () => {
-  if (currentSlide === maxSlide - 1) {
-    currentSlide = 0;
-  } else {
-    currentSlide += 1;
-  }
-
-  slides.forEach((s, i) => {
-    s.style.transform = `translateX(${100 * (currentSlide - i)}%)`;
-  });
-
-  for (const s of slides) {
-    s.classList.remove("comments__slider--slide__active");
-  }
-  slides[currentSlide].classList.add("comments__slider--slide__active");
-});
-arrowLeft.addEventListener("click", () => {
   if (currentSlide === 0) {
     currentSlide = maxSlide - 1;
   } else {
@@ -38,6 +23,22 @@ arrowLeft.addEventListener("click", () => {
   });
   for (const s of slides) {
     s.classList.remove("comments__slider--slide__active");
+  }
+  slides[currentSlide].classList.add("comments__slider--slide__active");
+});
+arrowLeft.addEventListener("click", () => {
+  if (currentSlide === maxSlide - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide += 1;
+  }
+  slides.forEach((s, i) => {
+    s.style.transform = `translateX(${100 * (currentSlide - i)}%)`;
+    s.style.transition = 2;
+  });
+  for (const s of slides) {
+    s.classList.remove("comments__slider--slide__active");
+    s.style.transition = 2;
   }
   slides[currentSlide].classList.add("comments__slider--slide__active");
 });
