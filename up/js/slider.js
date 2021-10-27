@@ -12,21 +12,6 @@ slides.forEach((s, i) => {
 });
 
 arrowRight.addEventListener("click", () => {
-  if (currentSlide === 0) {
-    currentSlide = maxSlide - 1;
-  } else {
-    currentSlide--;
-  }
-
-  slides.forEach((s, i) => {
-    s.style.transform = `translateX(${100 * (currentSlide - i)}%)`;
-  });
-  for (const s of slides) {
-    s.classList.remove("comments__slider--slide__active");
-  }
-  slides[currentSlide].classList.add("comments__slider--slide__active");
-});
-arrowLeft.addEventListener("click", () => {
   if (currentSlide === maxSlide - 1) {
     currentSlide = 0;
   } else {
@@ -39,6 +24,20 @@ arrowLeft.addEventListener("click", () => {
   for (const s of slides) {
     s.classList.remove("comments__slider--slide__active");
     s.style.transition = 2;
+  }
+  slides[currentSlide].classList.add("comments__slider--slide__active");
+});
+arrowLeft.addEventListener("click", () => {
+  if (currentSlide === 0) {
+    currentSlide = maxSlide - 1;
+  } else {
+    currentSlide--;
+  }
+  slides.forEach((s, i) => {
+    s.style.transform = `translateX(${100 * (currentSlide - i)}%)`;
+  });
+  for (const s of slides) {
+    s.classList.remove("comments__slider--slide__active");
   }
   slides[currentSlide].classList.add("comments__slider--slide__active");
 });

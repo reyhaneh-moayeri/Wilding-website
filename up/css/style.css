@@ -578,6 +578,11 @@ button:hover {
   justify-content: space-around;
 }
 
+.products__cards--content__btns button {
+  flex-shrink: 0;
+  margin: 4rem 1rem 0 0;
+}
+
 .products__cards--content__btns button:first-of-type {
   background-color: var(--color-secondary);
   color: var(--color-quinary);
@@ -631,6 +636,7 @@ button:hover {
   }
   .products__cards--card {
     width: 70%;
+    margin-top: 3rem;
   }
 }
 
@@ -801,12 +807,24 @@ button:hover {
   align-items: center;
   width: 5rem;
   height: 5rem;
-  background-color: black;
   border-radius: 50%;
 }
 
 .comments__slider--arrows__right i, .comments__slider--arrows__left i {
   color: var(--color-quinary);
+}
+
+.comments__slider--arrows__left {
+  background-color: var(--color-quinary);
+  border: 0.1rem solid #000;
+}
+
+.comments__slider--arrows__left i {
+  color: black;
+}
+
+.comments__slider--arrows__right {
+  background-color: black;
 }
 
 @media screen and (max-width: 1300px) {
@@ -822,16 +840,20 @@ button:hover {
   }
 }
 
-.comments__slider--slide__profile--pic:nth-child(1) {
+.comments__slider--slide:nth-child(1) .comments__slider--slide__profile--pic {
   background-image: url("../images/profile-1.jpg");
 }
 
-.comments__slider--slide__profile--pic:nth-child(2) {
+.comments__slider--slide:nth-child(2) .comments__slider--slide__profile--pic {
   background-image: url("../images/profile-2.jpg");
 }
 
-.comments__slider--slide__profile--pic:nth-child(3) {
+.comments__slider--slide:nth-child(3) .comments__slider--slide__profile--pic {
   background-image: url("../images/profile-3.jpg");
+}
+
+.comments__slider--slide:nth-child(4) .comments__slider--slide__profile--pic {
+  background-image: url("../images/profile-4.jpg");
 }
 
 .footer {
@@ -906,7 +928,7 @@ button:hover {
   }
 }
 
-.showcase, .comments__slider--slide__profile--pic:nth-child(1), .comments__slider--slide__profile--pic:nth-child(2), .comments__slider--slide__profile--pic:nth-child(3) {
+.showcase, .comments__slider--slide:nth-child(1) .comments__slider--slide__profile--pic, .comments__slider--slide:nth-child(2) .comments__slider--slide__profile--pic, .comments__slider--slide:nth-child(3) .comments__slider--slide__profile--pic, .comments__slider--slide:nth-child(4) .comments__slider--slide__profile--pic {
   background-repeat: none;
   background-position: center;
   background-size: cover;

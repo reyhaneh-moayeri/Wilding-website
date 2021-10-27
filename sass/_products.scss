@@ -58,6 +58,11 @@
         display: flex;
         justify-content: space-around;
 
+        & button {
+          flex-shrink: 0;
+          margin: 4rem 1rem 0 0;
+        }
+
         & button:first-of-type {
           background-color: var(--color-secondary);
           color: var(--color-quinary);
@@ -118,6 +123,7 @@
 
       &--card {
         width: 70%;
+        margin-top: 3rem;
       }
     }
 
